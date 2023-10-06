@@ -5,20 +5,9 @@ services:
     build: .
     volumes:
       - .:/app
-#      - ../file_uploads:/usr/src/app/file_uploads
       - ../smtp_project_logs:/usr/src/app/logs
     ports:
       - ${EXTERNAL_PORT}:${CONTAINER_PORT}
     env_file:
       - .env
     container_name: smtp_fastapi
-#    depends_on:
-#      - mongodb
-
-#  mongodb:
-#    image: mongo:latest
-#    container_name: mongodb
-#    volumes:
-#      - /var/lib/data/mongodb:/data/db
-#    ports:
-#      - ${MONGODB_PORT}:27017
